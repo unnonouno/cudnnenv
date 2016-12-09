@@ -119,13 +119,18 @@ def ensure_exist(ver):
         download_cudnn(ver)
 
 
+def remove_link():
+    symlink_path = get_active_path()
+    if os.path.exists(symlink_path):
+        os.remove(symlink_path)
+
+
 def select_cudnn(ver):
     ensure_exist(ver)
 
     version_path = os.path.join('versions', ver)
+    remove_link()
     symlink_path = get_active_path()
-    if os.path.exists(symlink_path):
-        os.remove(symlink_path)
     os.symlink(version_path, symlink_path)
 
 
@@ -160,6 +165,10 @@ def versions(args):
         print(ver)
 
 
+def deactivate(args):
+    remove_link()
+
+
 def main():
     parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers(help='Subcommand')
@@ -174,6 +183,9 @@ def main():
 
     sub = subparsers.add_parser('versions', help='Show avalable versions')
     sub.set_defaults(func=versions)
+
+    sub = subparsers.add_parser('deactivate', help='Deactivate cudnnenv')
+    sub.set_defaults(func=deactivate)
 
     args = parser.parse_args()
 
