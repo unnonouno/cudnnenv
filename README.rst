@@ -33,13 +33,13 @@ Usage
 positional arguments:
   {install,version,versions,deactivate}
 
-:install: Install version
-:version: Show active version
-:versions: Show avalable versions
-:deactivate: Deactivate cudnnenv
+:`install`: Install version
+:`version`: Show active version
+:`versions`: Show avalable versions
+:`deactivate`: Deactivate cudnnenv
 
 optional arguments:
-:-h, --help: show this help message and exit
+  -h, --help  show this help message and exit
 
 
 `install`
@@ -54,7 +54,7 @@ You also need to use this command when you want to only activate a version.
 
 positional arguments:
 
-:VERSION: Version of cuDNN you want to install and activate. Select from [v2, v3, v4, v5, v5-cuda8, v51, v51-cuda8]
+:`VERSION`: Version of cuDNN you want to install and activate. Select from [v2, v3, v4, v5, v5-cuda8, v51, v51-cuda8]
 
 
 `version`
