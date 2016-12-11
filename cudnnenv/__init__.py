@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import argparse
 import contextlib
 import os
@@ -7,6 +5,8 @@ import shutil
 import subprocess
 import sys
 import tempfile
+
+__version__ = '0.0.0'
 
 
 cudnn_home = os.path.join(os.environ['HOME'], '.cudnn')
@@ -194,7 +194,3 @@ def main():
         sys.exit(1)
 
     args.func(args)
-
-
-if __name__ == '__main__':
-    main()
