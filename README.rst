@@ -23,6 +23,72 @@ cuDNN which cudnnenv installs locates at `~/.cudnn/active/cuda`.
    LIBRARY_PATH=~/.cudnn/active/cuda/lib64:$LIBRARY_PATH
 
 
+Usage
+-----
+
+::
+
+   usage: cudnnenv [-h] {install,version,versions,deactivate} ...
+
+positional arguments:
+  {install,version,versions,deactivate}
+
+:`install`: Install version
+:`version`: Show active version
+:`versions`: Show avalable versions
+:`deactivate`: Deactivate cudnnenv
+
+optional arguments:
+  -h, --help  show this help message and exit
+
+
+`install`
+~~~~~~~~~
+
+`install` subcommand installs a given version of cuDNN and activate it.
+You also need to use this command when you want to only activate a version.
+
+::
+
+   usage: cudnnenv install [-h] VERSION
+
+positional arguments:
+
+:`VERSION`: Version of cuDNN you want to install and activate. Select from [v2, v3, v4, v5, v5-cuda8, v51, v51-cuda8]
+
+
+`version`
+~~~~~~~~~
+
+`version` subcommand shows the current activated version.
+If you activate no version, it shows `(none)`.
+
+::
+
+   usage: cudnnenv version [-h]
+
+
+`versions`
+~~~~~~~~~~
+
+`versions` subcommand shows the available versions, which you can select in `install` subcommand.
+
+::
+
+   usage: cudnnenv versions [-h]
+
+
+`deactivate`
+~~~~~~~~~~~~
+
+`deactivate` subcommand deactivates cudnnenv by removing symbolic link.
+
+::
+
+   usage: cudnnenv deactivate [-h]
+
+
+
 Directory structure
 -------------------
 
