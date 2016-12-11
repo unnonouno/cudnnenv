@@ -174,8 +174,11 @@ def main():
     subparsers = parser.add_subparsers(help='Subcommand')
 
     sub = subparsers.add_parser('install', help='Install version')
+    vers = sorted(codes.keys())
     sub.add_argument(
-        'version', metavar='VERSION', choices=sorted(codes.keys()))
+        'version', metavar='VERSION', choices=vers,
+        help='Version of cuDNN you want to install and activate. '
+        'Select from [%s]' % ', '.join(vers))
     sub.set_defaults(func=install)
 
     sub = subparsers.add_parser('version', help='Show active version')
