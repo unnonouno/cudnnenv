@@ -67,7 +67,7 @@ codes['v5-cuda8'] = cudnn_base.format(
 codes['v51'] = cudnn_base.format(
     cudnn='cudnn-7.5-linux-x64-v5.1',
     cudnn_ver='v5.1',
-    sha256sum='40d506d0a8a00a3faccce1433346806b8cd2535683b6f08a63683ce6e474419f',
+    sha256sum='69ca71f7728b54b6e003393083f419b24774fecd3b08bbf41bceac9a9fe16345',
 )
 
 codes['v51-cuda8'] = cudnn_base.format(
