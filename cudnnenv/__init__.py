@@ -134,8 +134,31 @@ def select_cudnn(ver):
     os.symlink(version_path, symlink_path)
 
 
+def yes_no_query(question):
+    while True:
+        user_input = raw_input('%s [y/n] ' % question).lower()
+        if user_input == 'y':
+            return True
+        elif user_input == 'n':
+            return False
+
+
+def uninstall_cudnn(ver):
+    path = get_version_path(ver)
+    if not os.path.exists(path):
+        print('version %s is not installed' % ver)
+        sys.exit(2)
+
+    if yes_no_query('remove %s?' % path):
+        shutil.rmtree(path, ignore_errors=True)
+
+
 def install(args):
     select_cudnn(args.version)
+
+
+def uninstall(args):
+    uninstall_cudnn(args.version)
 
 
 def get_version():
@@ -180,6 +203,12 @@ def main():
         help='Version of cuDNN you want to install and activate. '
         'Select from [%s]' % ', '.join(vers))
     sub.set_defaults(func=install)
+
+    sub = subparsers.add_parser('uninstall', help='Uninstall version')
+    sub.add_argument(
+        'version', metavar='VERSION',
+        help='Version of cuDNN you want to uninstall.')
+    sub.set_defaults(func=uninstall)
 
     sub = subparsers.add_parser('version', help='Show active version')
     sub.set_defaults(func=version)
