@@ -34,6 +34,7 @@ positional arguments:
   {install,version,versions,deactivate}
 
 :`install`: Install version
+:`uninstall`: Uninstall version
 :`version`: Show active version
 :`versions`: Show avalable versions
 :`deactivate`: Deactivate cudnnenv
@@ -55,6 +56,20 @@ You also need to use this command when you want to only activate a version.
 positional arguments:
 
 :`VERSION`: Version of cuDNN you want to install and activate. Select from [v2, v3, v4, v5, v5-cuda8, v51, v51-cuda8]
+
+
+`uninstall`
+~~~~~~~~~~~
+
+`uninstall` subcommand uninstalls a given version of cuDNN from your environment.
+
+::
+
+   usage: cudnnenv uninstall [-h] VERSION
+
+positional arguments:
+   
+:VERSION: Version of cuDNN you want to uninstall.
 
 
 `version`
