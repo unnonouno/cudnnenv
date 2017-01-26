@@ -2,12 +2,10 @@
 
 from setuptools import setup
 
-import cudnnenv
-
 
 setup(
     name='cudnnenv',
-    version=cudnnenv.__version__,
+    version='0.2.0',
     description='cudnn environment manager',
     long_description=open('README.rst').read(),
     author='Yuya Unno',
