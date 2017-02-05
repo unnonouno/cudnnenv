@@ -132,6 +132,12 @@ def select_cudnn(ver):
     remove_link()
     symlink_path = get_active_path()
     os.symlink(version_path, symlink_path)
+    print('Successfully installed %s' % ver)
+    print('Set your environment variables:')
+    print('')
+    print('  LD_LIBRARY_PATH=~/.cudnn/active/cuda/lib64:$LD_LIBRARY_PATH')
+    print('  CPATH=~/.cudnn/active/cuda/include:$CPATH')
+    print('  LIBRARY_PATH=~/.cudnn/active/cuda/lib64:$LIBRARY_PATH')
 
 
 def yes_no_query(question):
