@@ -72,8 +72,8 @@ You can only install tar.gz file, can not use deb packages.
 
 positional arguments:
 
-  :`FILE`: Path to local cuDNN archive file to install
-  :`VERSION`: Version name of cuDNN you want to install
+:`FILE`: Path to local cuDNN archive file to install
+:`VERSION`: Version name of cuDNN you want to install
 
 
 `activate`
@@ -88,7 +88,7 @@ This command does not download an archive file unlike `install`.
 
 positional arguments:
 
-  :`VERSION`: Version of installed cuDNN you want to activate.
+:`VERSION`: Version of installed cuDNN you want to activate.
 
 
 `uninstall`
