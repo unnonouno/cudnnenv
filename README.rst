@@ -34,6 +34,7 @@ positional arguments:
   {install,version,versions,deactivate}
 
 :`install`: Install version
+:`install-file`: Install local cuDNN file
 :`uninstall`: Uninstall version
 :`version`: Show active version
 :`versions`: Show avalable versions
@@ -56,6 +57,22 @@ You also need to use this command when you want to only activate a version.
 positional arguments:
 
 :`VERSION`: Version of cuDNN you want to install and activate. Select from [v2, v3, v4, v5, v5-cuda8, v51, v51-cuda8]
+
+
+`install-file`
+~~~~~~~~~~~~~~
+
+`install-file` subcommand installs a given local cuDNN file and activate it.
+You can only install tar.gz file, can not use deb packages.
+
+::
+
+   usage: cudnnenv install-file [-h] FILE VERSION
+
+positional arguments:
+
+  :`FILE`: Path to local cuDNN archive file to install
+  :`VERSION`: Version name of cuDNN you want to install
 
 
 `uninstall`

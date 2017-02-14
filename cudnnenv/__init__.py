@@ -77,6 +77,9 @@ codes['v51-cuda8'] = cudnn_base.format(
 )
 
 
+local_install_command = 'tar -xzf {file} -C {path}'
+
+
 @contextlib.contextmanager
 def safe_temp_dir():
     temp_dir = tempfile.mkdtemp()
@@ -163,6 +166,21 @@ def install(args):
     select_cudnn(args.version)
 
 
+def install_file(args):
+    path = get_version_path(args.version)
+    if os.path.exists(path):
+        print('version %s already exists' % ver)
+        sys.exit(3)
+
+    path = get_version_path(args.version)
+    with safe_dir(path), safe_temp_dir() as temp_dir:
+        cmd = local_install_command.format(
+            file=args.file, path=path)
+        subprocess.check_call(cmd, shell=True)
+
+    select_cudnn(args.version)
+
+
 def uninstall(args):
     uninstall_cudnn(args.version)
 
@@ -209,6 +227,15 @@ def main():
         help='Version of cuDNN you want to install and activate. '
         'Select from [%s]' % ', '.join(vers))
     sub.set_defaults(func=install)
+
+    sub = subparsers.add_parser('install-file', help='Install local cuDNN file')
+    sub.add_argument(
+        'file', metavar='FILE',
+        help='Path to local cuDNN archive file to install')
+    sub.add_argument(
+        'version', metavar='VERSION',
+        help='Version name of cuDNN you want to install')
+    sub.set_defaults(func=install_file)
 
     sub = subparsers.add_parser('uninstall', help='Uninstall version')
     sub.add_argument(
