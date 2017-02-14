@@ -35,6 +35,7 @@ positional arguments:
 
 :`install`: Install version
 :`install-file`: Install local cuDNN file
+:`activate`: Activate installed version
 :`uninstall`: Uninstall version
 :`version`: Show active version
 :`versions`: Show avalable versions
@@ -48,7 +49,7 @@ optional arguments:
 ~~~~~~~~~
 
 `install` subcommand installs a given version of cuDNN and activate it.
-You also need to use this command when you want to only activate a version.
+Use `activate` subcommand to only activate installed version.
 
 ::
 
@@ -73,6 +74,21 @@ positional arguments:
 
   :`FILE`: Path to local cuDNN archive file to install
   :`VERSION`: Version name of cuDNN you want to install
+
+
+`activate`
+~~~~~~~~~~
+
+`activate` subcommand activates an installed cuDNN.
+This command does not download an archive file unlike `install`.
+
+::
+
+   usage: cudnnenv activate [-h] VERSION
+
+positional arguments:
+
+  :`VERSION`: Version of installed cuDNN you want to activate.
 
 
 `uninstall`
