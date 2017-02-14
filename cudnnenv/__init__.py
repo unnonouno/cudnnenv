@@ -77,6 +77,9 @@ codes['v51-cuda8'] = cudnn_base.format(
 )
 
 
+local_install_command = 'tar -xzf {file} -C {path}'
+
+
 @contextlib.contextmanager
 def safe_temp_dir():
     temp_dir = tempfile.mkdtemp()
@@ -102,6 +105,11 @@ def get_version_path(ver):
 
 def get_active_path():
     return os.path.join(cudnn_home, 'active')
+
+
+def get_installed_versions():
+    version_dir = os.path.join(cudnn_home, 'versions')
+    return os.listdir(version_dir)
 
 
 def download_cudnn(ver):
@@ -163,6 +171,21 @@ def install(args):
     select_cudnn(args.version)
 
 
+def install_file(args):
+    path = get_version_path(args.version)
+    if os.path.exists(path):
+        print('version %s already exists' % ver)
+        sys.exit(3)
+
+    path = get_version_path(args.version)
+    with safe_dir(path), safe_temp_dir() as temp_dir:
+        cmd = local_install_command.format(
+            file=args.file, path=path)
+        subprocess.check_call(cmd, shell=True)
+
+    select_cudnn(args.version)
+
+
 def uninstall(args):
     uninstall_cudnn(args.version)
 
@@ -176,6 +199,15 @@ def get_version():
         return None
 
 
+def print_versions(versions, active):
+    for ver in sorted(versions):
+        if ver == active:
+            ver = '* ' + ver
+        else:
+            ver = '  ' + ver
+        print(ver)
+
+
 def version(args):
     ver = get_version()
     if ver is None:
@@ -186,12 +218,11 @@ def version(args):
 
 def versions(args):
     active = get_version()
-    for ver in sorted(codes.keys()):
-        if ver == active:
-            ver = '* ' + ver
-        else:
-            ver = '  ' + ver
-        print(ver)
+    print('Available versions:')
+    print_versions(codes.keys(), active)
+    print('')
+    print('Installed versions:')
+    print_versions(get_installed_versions(), active)
 
 
 def deactivate(args):
@@ -209,6 +240,15 @@ def main():
         help='Version of cuDNN you want to install and activate. '
         'Select from [%s]' % ', '.join(vers))
     sub.set_defaults(func=install)
+
+    sub = subparsers.add_parser('install-file', help='Install local cuDNN file')
+    sub.add_argument(
+        'file', metavar='FILE',
+        help='Path to local cuDNN archive file to install')
+    sub.add_argument(
+        'version', metavar='VERSION',
+        help='Version name of cuDNN you want to install')
+    sub.set_defaults(func=install_file)
 
     sub = subparsers.add_parser('uninstall', help='Uninstall version')
     sub.add_argument(
