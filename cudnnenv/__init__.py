@@ -136,7 +136,7 @@ def ensure_exist(ver):
 
 def remove_link():
     symlink_path = get_active_path()
-    if os.path.exists(symlink_path):
+    if os.path.lexists(symlink_path):
         os.remove(symlink_path)
 
 
