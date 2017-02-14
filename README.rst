@@ -103,7 +103,7 @@ If you activate no version, it shows `(none)`.
 `versions`
 ~~~~~~~~~~
 
-`versions` subcommand shows the available versions, which you can select in `install` subcommand.
+`versions` subcommand shows the available versions which you can select in `install` subcommand, and installed versions which you installed with `install` and `install-files` subcommands.
 
 ::
 

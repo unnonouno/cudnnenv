@@ -107,6 +107,11 @@ def get_active_path():
     return os.path.join(cudnn_home, 'active')
 
 
+def get_installed_versions():
+    version_dir = os.path.join(cudnn_home, 'versions')
+    return os.listdir(version_dir)
+
+
 def download_cudnn(ver):
     path = get_version_path(ver)
 
@@ -194,6 +199,15 @@ def get_version():
         return None
 
 
+def print_versions(versions, active):
+    for ver in sorted(versions):
+        if ver == active:
+            ver = '* ' + ver
+        else:
+            ver = '  ' + ver
+        print(ver)
+
+
 def version(args):
     ver = get_version()
     if ver is None:
@@ -204,12 +218,11 @@ def version(args):
 
 def versions(args):
     active = get_version()
-    for ver in sorted(codes.keys()):
-        if ver == active:
-            ver = '* ' + ver
-        else:
-            ver = '  ' + ver
-        print(ver)
+    print('Available versions:')
+    print_versions(codes.keys(), active)
+    print('')
+    print('Installed versions:')
+    print_versions(get_installed_versions(), active)
 
 
 def deactivate(args):
