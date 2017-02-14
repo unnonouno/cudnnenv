@@ -121,10 +121,17 @@ def download_cudnn(ver):
         subprocess.check_call(cmd, shell=True)
 
 
-def ensure_exist(ver):
+def download_if_not_exist(ver):
     path = get_version_path(ver)
     if not os.path.exists(path):
         download_cudnn(ver)
+
+
+def ensure_exist(ver):
+    path = get_version_path(ver)
+    if not os.path.exists(path):
+        print('version %s is not installed' % ver)
+        sys.exit(2)
 
 
 def remove_link():
@@ -158,16 +165,19 @@ def yes_no_query(question):
 
 
 def uninstall_cudnn(ver):
-    path = get_version_path(ver)
-    if not os.path.exists(path):
-        print('version %s is not installed' % ver)
-        sys.exit(2)
+    ensure_exist(ver)
 
+    path = get_version_path(ver)
     if yes_no_query('remove %s?' % path):
         shutil.rmtree(path, ignore_errors=True)
 
 
 def install(args):
+    download_if_not_exist(args.version)
+    select_cudnn(args.version)
+
+
+def activate(args):
     select_cudnn(args.version)
 
 
@@ -249,6 +259,13 @@ def main():
         'version', metavar='VERSION',
         help='Version name of cuDNN you want to install')
     sub.set_defaults(func=install_file)
+
+    sub = subparsers.add_parser('activate', help='Activate installed version')
+    vers = sorted(codes.keys())
+    sub.add_argument(
+        'version', metavar='VERSION',
+        help='Version of installed cuDNN you want to activate. ')
+    sub.set_defaults(func=activate)
 
     sub = subparsers.add_parser('uninstall', help='Uninstall version')
     sub.add_argument(
