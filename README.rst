@@ -28,10 +28,12 @@ Usage
 
 ::
 
-   usage: cudnnenv [-h] {install,version,versions,deactivate} ...
+   usage: cudnnenv [-h]
+                   {install,install-file,activate,uninstall,version,versions,deactivate}
+                   ...
 
 positional arguments:
-  {install,version,versions,deactivate}
+  {install,install-file,activate,uninstall,version,versions,deactivate}
 
 :`install`: Install version
 :`install-file`: Install local cuDNN file
