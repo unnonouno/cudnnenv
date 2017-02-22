@@ -109,6 +109,8 @@ def get_active_path():
 
 def get_installed_versions():
     version_dir = os.path.join(cudnn_home, 'versions')
+    if not os.path.isdir(version_dir):
+        return []
     return os.listdir(version_dir)
 
 
