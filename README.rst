@@ -1,3 +1,16 @@
+.. image:: https://img.shields.io/pypi/v/cudnnenv.svg
+   :target: https://pypi.python.org/pypi/cudnnenv
+
+.. image:: https://img.shields.io/github/license/unnonouno/cudnnenv.svg
+   :target: https://github.com/unnonouno/cudnnenv
+
+.. image:: https://img.shields.io/travis/unnonouno/cudnnenv/master.svg
+   :target: https://travis-ci.org/unnonouno/cudnnenv
+
+.. image:: https://img.shields.io/coveralls/unnonouno/cudnnenv.svg
+   :target: https://coveralls.io/r/unnonouno/cudnnenv?branch=master
+
+
 cudnnenv
 ========
 
