@@ -22,6 +22,9 @@ cuDNN which cudnnenv installs locates at `~/.cudnn/active/cuda`.
    CPATH=~/.cudnn/active/cuda/include:$CPATH
    LIBRARY_PATH=~/.cudnn/active/cuda/lib64:$LIBRARY_PATH
 
+This program uses ``curl`` and ``tar`` commands.
+Please install them before you use it.
+
 
 Usage
 -----
