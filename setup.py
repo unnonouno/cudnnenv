@@ -25,4 +25,5 @@ setup(
         'Intended Audience :: Information Technology',
         'Topic :: Utilities',
     ],
+    test_suite='test',
 )
