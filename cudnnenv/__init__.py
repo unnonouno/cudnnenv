@@ -94,7 +94,7 @@ def safe_dir(path):
     os.makedirs(path)
     try:
         yield path
-    except:
+    except Exception:
         shutil.rmtree(path, ignore_errors=True)
         raise
 
@@ -190,7 +190,7 @@ def install_file(args):
         sys.exit(3)
 
     path = get_version_path(args.version)
-    with safe_dir(path), safe_temp_dir() as temp_dir:
+    with safe_dir(path):
         cmd = local_install_command.format(
             file=args.file, path=path)
         subprocess.check_call(cmd, shell=True)
