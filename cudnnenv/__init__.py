@@ -186,7 +186,7 @@ def activate(args):
 def install_file(args):
     path = get_version_path(args.version)
     if os.path.exists(path):
-        print('version %s already exists' % ver)
+        print('version %s already exists' % args.version)
         sys.exit(3)
 
     path = get_version_path(args.version)
