@@ -1,3 +1,6 @@
+from __future__ import print_function
+from __future__ import unicode_literals
+
 import argparse
 import contextlib
 import os
@@ -241,7 +244,7 @@ def deactivate(args):
     remove_link()
 
 
-def main():
+def main(args=None):
     parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers(help='Subcommand')
 
@@ -284,7 +287,7 @@ def main():
     sub = subparsers.add_parser('deactivate', help='Deactivate cudnnenv')
     sub.set_defaults(func=deactivate)
 
-    args = parser.parse_args()
+    args = parser.parse_args(args=args)
 
     if not hasattr(args, 'func'):
         parser.error('specify sub-command')
