@@ -52,7 +52,7 @@ codes['v3'] = cudnn_base.format(
 codes['v4'] = cudnn_base.format(
     cudnn='cudnn-7.0-linux-x64-v4.0-prod',
     cudnn_ver='v4',
-    sha256sum='4e64ef7716f20c87854b4421863328e17cce633330c319b5e13809b61a36f97d',
+    sha256sum='cd091763d5889f0efff1fbda83bade191f530743a212c6b0ecc2a64d64d94405',
 )
 
 codes['v5'] = cudnn_base.format(
