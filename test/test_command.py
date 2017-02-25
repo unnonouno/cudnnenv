@@ -48,7 +48,7 @@ class TestCommand(unittest.TestCase):
 
         self.assertEqual(cont.exception.code, 2)
 
-    def test_install_file(self):
+    def test_install_file_and_uninstall(self):
         self.call_main('install-file', self.empty_tgz_path, 'v0')
 
         self.assertTrue(os.path.exists(os.path.join(self.path, 'active')))
@@ -60,6 +60,24 @@ class TestCommand(unittest.TestCase):
         self.clear_stdout()
         self.call_main('version')
         self.assertEqual(self.get_stdout(), 'v0\n')
+
+        self.clear_stdout()
+        self.call_main('versions')
+        self.assertEqual(self.get_stdout(), '''Available versions:
+  v2
+  v3
+  v4
+  v5
+  v5-cuda8
+  v51
+  v51-cuda8
+
+Installed versions:
+* v0
+''')
+
+        with mock.patch('__builtin__.raw_input', return_value='y'):
+            self.call_main('uninstall', 'v0')
 
     def test_install_exists(self):
         self.call_main('install-file', self.empty_tgz_path, 'v0')
@@ -90,8 +108,3 @@ Installed versions:
         with self.assertRaises(SystemExit) as cont:
             self.call_main('uninstall', 'v2')
         self.assertEqual(cont.exception.code, 2)
-
-    def test_uninstall(self):
-        self.call_main('install-file', self.empty_tgz_path, 'v0')
-        with mock.patch('__builtin__.raw_input', return_value='y'):
-            self.call_main('uninstall', 'v0')
