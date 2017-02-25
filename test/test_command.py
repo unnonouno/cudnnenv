@@ -78,6 +78,22 @@ Installed versions:
 
         with mock.patch('__builtin__.raw_input', return_value='y'):
             self.call_main('uninstall', 'v0')
+        self.assertFalse(os.path.exists(
+            os.path.join(self.path, 'versions', 'v0')))
+
+        self.clear_stdout()
+        self.call_main('versions')
+        self.assertEqual(self.get_stdout(), '''Available versions:
+  v2
+  v3
+  v4
+  v5
+  v5-cuda8
+  v51
+  v51-cuda8
+
+Installed versions:
+''')
 
     def test_install_exists(self):
         self.call_main('install-file', self.empty_tgz_path, 'v0')
@@ -85,7 +101,7 @@ Installed versions:
             self.call_main('install-file', self.empty_tgz_path, 'v0')
         self.assertEqual(cont.exception.code, 3)
 
-    def test_activate(self):
+    def test_activate_deactivate(self):
         self.call_main('install-file', self.empty_tgz_path, 'v0')
         active = os.readlink(os.path.join(self.path, 'active'))
         self.assertEqual(active, 'versions/v0')
@@ -97,6 +113,25 @@ Installed versions:
         self.call_main('activate', 'v0')
         active = os.readlink(os.path.join(self.path, 'active'))
         self.assertEqual(active, 'versions/v0')
+
+        self.call_main('deactivate')
+        self.assertFalse(os.path.exists(os.path.join(self.path, 'active')))
+
+        self.clear_stdout()
+        self.call_main('versions')
+        self.assertEqual(self.get_stdout(), '''Available versions:
+  v2
+  v3
+  v4
+  v5
+  v5-cuda8
+  v51
+  v51-cuda8
+
+Installed versions:
+  v0
+  v1
+''')
 
     def test_clean_environment(self):
         self.call_main('versions')
