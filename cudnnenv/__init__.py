@@ -4,12 +4,19 @@ from __future__ import unicode_literals
 import argparse
 import contextlib
 import os
+import platform
 import shutil
 import subprocess
 import sys
 import tempfile
 
 __version__ = '0.3.0'
+
+
+if int(platform.python_version_tuple()[0]) >= 3:
+    _raw_input = input
+else:
+    _raw_input = raw_input
 
 
 cudnn_home = os.path.join(os.environ['HOME'], '.cudnn')
@@ -162,7 +169,7 @@ def select_cudnn(ver):
 
 def yes_no_query(question):
     while True:
-        user_input = raw_input('%s [y/n] ' % question).lower()
+        user_input = _raw_input('%s [y/n] ' % question).lower()
         if user_input == 'y':
             return True
         elif user_input == 'n':

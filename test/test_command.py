@@ -10,8 +10,6 @@ import sys
 import tempfile
 import unittest
 
-import mock
-
 import cudnnenv
 
 
@@ -30,6 +28,7 @@ class TestCommand(unittest.TestCase):
     def tearDown(self):
         shutil.rmtree(self.path, ignore_errors=True)
         sys.stdout = sys.__stdout__
+        sys.stdin = sys.__stdin__
         cudnnenv.cudnn_home = self.original_cudnn_home
 
     def call_main(self, *args):
@@ -37,6 +36,9 @@ class TestCommand(unittest.TestCase):
 
     def get_stdout(self):
         return self.stdout.getvalue()
+
+    def set_stdin(self, s):
+        sys.stdin = StringIO(s)
 
     def clear_stdout(self):
         self.stdout = StringIO()
@@ -76,8 +78,8 @@ Installed versions:
 * v0
 ''')
 
-        with mock.patch('__builtin__.raw_input', return_value='y'):
-            self.call_main('uninstall', 'v0')
+        self.set_stdin('y\n')
+        self.call_main('uninstall', 'v0')
         self.assertFalse(os.path.exists(
             os.path.join(self.path, 'versions', 'v0')))
 
