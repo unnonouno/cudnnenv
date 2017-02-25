@@ -85,6 +85,19 @@ Installed versions:
             self.call_main('install-file', self.empty_tgz_path, 'v0')
         self.assertEqual(cont.exception.code, 3)
 
+    def test_activate(self):
+        self.call_main('install-file', self.empty_tgz_path, 'v0')
+        active = os.readlink(os.path.join(self.path, 'active'))
+        self.assertEqual(active, 'versions/v0')
+
+        self.call_main('install-file', self.empty_tgz_path, 'v1')
+        active = os.readlink(os.path.join(self.path, 'active'))
+        self.assertEqual(active, 'versions/v1')
+
+        self.call_main('activate', 'v0')
+        active = os.readlink(os.path.join(self.path, 'active'))
+        self.assertEqual(active, 'versions/v0')
+
     def test_clean_environment(self):
         self.call_main('versions')
         self.assertEqual(self.get_stdout(), '''Available versions:
