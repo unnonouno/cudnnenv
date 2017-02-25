@@ -1,3 +1,12 @@
+Release 0.3.1 - 2017/2/25
+-------------------------
+
+- cuDNN v4 is updated (#29)
+- Fixed some bugs (#22, #23)
+- Improve README (#21, #25, #28)
+- Wrote test cases and found a but with Python3 (#26, #27, #30)
+
+
 Release 0.3.0 - 2017/2/14
 -------------------------
 
