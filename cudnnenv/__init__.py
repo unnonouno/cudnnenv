@@ -296,8 +296,4 @@ def main(args=None):
 
     args = parser.parse_args(args=args)
 
-    if not hasattr(args, 'func'):
-        parser.error('specify sub-command')
-        sys.exit(1)
-
     args.func(args)

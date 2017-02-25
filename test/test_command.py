@@ -160,3 +160,8 @@ Installed versions:
         with self.assertRaises(SystemExit) as cont:
             self.call_main('uninstall', 'v2')
         self.assertEqual(cont.exception.code, 2)
+
+    def test_unknown_subcommand(self):
+        with self.assertRaises(SystemExit) as cont:
+            self.call_main('unknown')
+        self.assertEqual(cont.exception.code, 2)
