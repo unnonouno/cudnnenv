@@ -1,3 +1,5 @@
+from __future__ import unicode_literals
+
 try:
     import io
     StringIO = io.StringIO
