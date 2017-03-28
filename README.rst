@@ -75,7 +75,7 @@ Use `activate` subcommand to only activate installed version.
 
 positional arguments:
 
-:`VERSION`: Version of cuDNN you want to install and activate. Select from [v2, v3, v4, v5, v5-cuda8, v51, v51-cuda8]
+:`VERSION`: Version of cuDNN you want to install and activate. Select from [v2, v3, v4, v5, v5-cuda8, v51, v51-cuda8, v6, v6-cuda8]
 
 
 `install-file`
