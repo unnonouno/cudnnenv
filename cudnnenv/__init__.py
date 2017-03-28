@@ -86,6 +86,18 @@ codes['v51-cuda8'] = cudnn_base.format(
     sha256sum='c10719b36f2dd6e9ddc63e3189affaa1a94d7d027e63b71c3f64d449ab0645ce',
 )
 
+codes['v6'] = cudnn_base.format(
+    cudnn='cudnn-7.5-linux-x64-v6.0',
+    cudnn_ver='v6.0',
+    sha256sum='f01ef9edde632cf75ae38045df30d7e8ec6847f3bdd20dcf13eaa52def253fba',
+)
+
+codes['v6-cuda8'] = cudnn_base.format(
+    cudnn='cudnn-8.0-linux-x64-v6.0',
+    cudnn_ver='v6.0',
+    sha256sum='36e7cd54d9f4cd448c302a40d2ed530a643e3ae32797a67739448ebe7c9f0620',
+)
+
 
 local_install_command = 'tar -xzf {file} -C {path}'
 
