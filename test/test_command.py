@@ -75,6 +75,8 @@ class TestCommand(unittest.TestCase):
   v5-cuda8
   v51
   v51-cuda8
+  v6
+  v6-cuda8
 
 Installed versions:
 * v0
@@ -95,6 +97,8 @@ Installed versions:
   v5-cuda8
   v51
   v51-cuda8
+  v6
+  v6-cuda8
 
 Installed versions:
 ''')
@@ -131,6 +135,8 @@ Installed versions:
   v5-cuda8
   v51
   v51-cuda8
+  v6
+  v6-cuda8
 
 Installed versions:
   v0
@@ -147,6 +153,8 @@ Installed versions:
   v5-cuda8
   v51
   v51-cuda8
+  v6
+  v6-cuda8
 
 Installed versions:
 ''')
