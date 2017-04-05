@@ -23,7 +23,7 @@ cudnn_home = os.path.join(os.environ['HOME'], '.cudnn')
 
 codes = {}
 
-if sys.platform == 'linux2':
+if 'linux' in sys.platform:
     cudnn2_base = '''
 curl -s -o {cudnn}.tgz http://developer.download.nvidia.com/compute/redist/cudnn/{cudnn_ver}/{cudnn}.tgz &&
 echo "{sha256sum}  {cudnn}.tgz" | sha256sum -cw --quiet - &&
