@@ -18,6 +18,7 @@ setup(
     },
     classifiers=[
         'Operating System :: POSIX :: Linux',
+        'Operating System :: MacOS :: MacOS X',
         'Environment :: Console',
         'Programming Language :: Python',
         'License :: OSI Approved :: MIT License',

@@ -17,6 +17,13 @@ cudnnenv
 cudnnenv manages various versions of cuDNN.
 
 
+Requirement
+-----------
+
+- Linux, macOS
+- Python 2.7, 3.4, 3.5, 3.6
+
+
 Install
 -------
 

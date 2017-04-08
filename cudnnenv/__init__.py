@@ -23,7 +23,8 @@ cudnn_home = os.path.join(os.environ['HOME'], '.cudnn')
 
 codes = {}
 
-cudnn2_base = '''
+if 'linux' in sys.platform:
+    cudnn2_base = '''
 curl -s -o {cudnn}.tgz http://developer.download.nvidia.com/compute/redist/cudnn/{cudnn_ver}/{cudnn}.tgz &&
 echo "{sha256sum}  {cudnn}.tgz" | sha256sum -cw --quiet - &&
 tar -xzf {cudnn}.tgz &&
@@ -37,66 +38,149 @@ mv {cudnn}/libcudnn.so.6.5.48 {{path}}/cuda/lib64/. &&
 mv {cudnn}/libcudnn_static.a {{path}}/cuda/lib64/.
 '''
 
-codes['v2'] = cudnn2_base.format(
-    cudnn='cudnn-6.5-linux-x64-v2',
-    cudnn_ver='v2',
-    sha256sum='4b02cb6bf9dfa57f63bfff33e532f53e2c5a12f9f1a1b46e980e626a55f380aa',
-)
+    codes['v2'] = cudnn2_base.format(
+        cudnn='cudnn-6.5-linux-x64-v2',
+        cudnn_ver='v2',
+        sha256sum='4b02cb6bf9dfa57f63bfff33e532f53e2c5a12f9f1a1b46e980e626a55f380aa',
+    )
 
-cudnn_base = '''
+    cudnn_base = '''
 curl -o {cudnn}.tgz http://developer.download.nvidia.com/compute/redist/cudnn/{cudnn_ver}/{cudnn}.tgz &&
 echo "{sha256sum} {cudnn}.tgz" | sha256sum -cw --quiet - &&
 tar -xzf {cudnn}.tgz -C {{path}} &&
 rm {cudnn}.tgz
 '''
 
-codes['v3'] = cudnn_base.format(
-    cudnn='cudnn-7.0-linux-x64-v3.0-prod',
-    cudnn_ver='v3',
-    sha256sum='98679d5ec039acfd4d81b8bfdc6a6352d6439e921523ff9909d364e706275c2b',
-)
+    codes['v3'] = cudnn_base.format(
+        cudnn='cudnn-7.0-linux-x64-v3.0-prod',
+        cudnn_ver='v3',
+        sha256sum='98679d5ec039acfd4d81b8bfdc6a6352d6439e921523ff9909d364e706275c2b',
+    )
 
-codes['v4'] = cudnn_base.format(
-    cudnn='cudnn-7.0-linux-x64-v4.0-prod',
-    cudnn_ver='v4',
-    sha256sum='cd091763d5889f0efff1fbda83bade191f530743a212c6b0ecc2a64d64d94405',
-)
+    codes['v4'] = cudnn_base.format(
+        cudnn='cudnn-7.0-linux-x64-v4.0-prod',
+        cudnn_ver='v4',
+        sha256sum='cd091763d5889f0efff1fbda83bade191f530743a212c6b0ecc2a64d64d94405',
+    )
 
-codes['v5'] = cudnn_base.format(
-    cudnn='cudnn-7.5-linux-x64-v5.0-ga',
-    cudnn_ver='v5',
-    sha256sum='c4739a00608c3b66a004a74fc8e721848f9112c5cb15f730c1be4964b3a23b3a',
-)
+    codes['v5'] = cudnn_base.format(
+        cudnn='cudnn-7.5-linux-x64-v5.0-ga',
+        cudnn_ver='v5',
+        sha256sum='c4739a00608c3b66a004a74fc8e721848f9112c5cb15f730c1be4964b3a23b3a',
+    )
 
-codes['v5-cuda8'] = cudnn_base.format(
-    cudnn='cudnn-8.0-linux-x64-v5.0-ga',
-    cudnn_ver='v5',
-    sha256sum='af80eb1ce0cb51e6a734b2bdc599e6d50b676eab3921e5bddfe5443485df86b6',
-)
+    codes['v5-cuda8'] = cudnn_base.format(
+        cudnn='cudnn-8.0-linux-x64-v5.0-ga',
+        cudnn_ver='v5',
+        sha256sum='af80eb1ce0cb51e6a734b2bdc599e6d50b676eab3921e5bddfe5443485df86b6',
+    )
 
-codes['v51'] = cudnn_base.format(
-    cudnn='cudnn-7.5-linux-x64-v5.1',
-    cudnn_ver='v5.1',
-    sha256sum='69ca71f7728b54b6e003393083f419b24774fecd3b08bbf41bceac9a9fe16345',
-)
+    codes['v51'] = cudnn_base.format(
+        cudnn='cudnn-7.5-linux-x64-v5.1',
+        cudnn_ver='v5.1',
+        sha256sum='69ca71f7728b54b6e003393083f419b24774fecd3b08bbf41bceac9a9fe16345',
+    )
 
-codes['v51-cuda8'] = cudnn_base.format(
-    cudnn='cudnn-8.0-linux-x64-v5.1',
-    cudnn_ver='v5.1',
-    sha256sum='c10719b36f2dd6e9ddc63e3189affaa1a94d7d027e63b71c3f64d449ab0645ce',
-)
+    codes['v51-cuda8'] = cudnn_base.format(
+        cudnn='cudnn-8.0-linux-x64-v5.1',
+        cudnn_ver='v5.1',
+        sha256sum='c10719b36f2dd6e9ddc63e3189affaa1a94d7d027e63b71c3f64d449ab0645ce',
+    )
 
-codes['v6'] = cudnn_base.format(
-    cudnn='cudnn-7.5-linux-x64-v6.0',
-    cudnn_ver='v6.0',
-    sha256sum='f01ef9edde632cf75ae38045df30d7e8ec6847f3bdd20dcf13eaa52def253fba',
-)
+    codes['v6'] = cudnn_base.format(
+        cudnn='cudnn-7.5-linux-x64-v6.0',
+        cudnn_ver='v6.0',
+        sha256sum='f01ef9edde632cf75ae38045df30d7e8ec6847f3bdd20dcf13eaa52def253fba',
+    )
 
-codes['v6-cuda8'] = cudnn_base.format(
-    cudnn='cudnn-8.0-linux-x64-v6.0',
-    cudnn_ver='v6.0',
-    sha256sum='36e7cd54d9f4cd448c302a40d2ed530a643e3ae32797a67739448ebe7c9f0620',
-)
+    codes['v6-cuda8'] = cudnn_base.format(
+        cudnn='cudnn-8.0-linux-x64-v6.0',
+        cudnn_ver='v6.0',
+        sha256sum='36e7cd54d9f4cd448c302a40d2ed530a643e3ae32797a67739448ebe7c9f0620',
+    )
+
+    LIBDIR = 'lib64'
+
+elif sys.platform == 'darwin':
+    cudnn2_base = '''
+curl -s -o {cudnn}.tgz http://developer.download.nvidia.com/compute/redist/cudnn/{cudnn_ver}/{cudnn}.tgz &&
+echo "{sha256sum}  {cudnn}.tgz" | shasum -a 256 -c - &&
+tar -xzf {cudnn}.tgz &&
+rm {cudnn}.tgz &&
+mkdir -p {{path}}/cuda/include &&
+mkdir -p {{path}}/cuda/lib &&
+mv {cudnn}/cudnn.h {{path}}/cuda/include/. &&
+mv {cudnn}/libcudnn.dylib {{path}}/cuda/lib/. &&
+mv {cudnn}/libcudnn.6.5.dylib {{path}}/cuda/lib/. &&
+mv {cudnn}/libcudnn_static.a {{path}}/cuda/lib/.
+'''
+
+    codes['v2'] = cudnn2_base.format(
+        cudnn='cudnn-6.5-osx-v2',
+        cudnn_ver='v2',
+        sha256sum='7dde2658e9861bb270c327fb3d806232579d48e77b6f495b26c17a4717af97c1',
+    )
+
+    cudnn_base = '''
+curl -o {cudnn}.tgz http://developer.download.nvidia.com/compute/redist/cudnn/{cudnn_ver}/{cudnn}.tgz &&
+echo "{sha256sum}  {cudnn}.tgz" | shasum -a 256 -c - &&
+tar -xzf {cudnn}.tgz -C {{path}} &&
+rm {cudnn}.tgz
+'''
+
+    codes['v3'] = cudnn_base.format(
+        cudnn='cudnn-7.0-osx-x64-v3.0-prod',
+        cudnn_ver='v3',
+        sha256sum='48cf77784bf0f833f3e52402aa6ff359aaca03e8d4aa48880ef2a00d91693633',
+    )
+
+    codes['v4'] = cudnn_base.format(
+        cudnn='cudnn-7.0-osx-x64-v4.0-prod',
+        cudnn_ver='v4',
+        sha256sum='675ed2bebe67fe317306fae3c44024ec9a848ee5b0e1fdcb14f9882a4d91aa4e',
+    )
+
+    codes['v5'] = cudnn_base.format(
+        cudnn='cudnn-7.5-osx-x64-v5.0-ga',
+        cudnn_ver='v5',
+        sha256sum='3008aa04b599650493c80daad802d893485af258fd503380e6fd5fa4569a3a73',
+    )
+
+    codes['v5-cuda8'] = cudnn_base.format(
+        cudnn='cudnn-8.0-osx-x64-v5.0-ga',
+        cudnn_ver='v5',
+        sha256sum='25dea96077c1d90ba4cb0a34e7d6dc8e885b8d1437e4ce8c7bce80f66ca10252',
+    )
+
+    codes['v51'] = cudnn_base.format(
+        cudnn='cudnn-7.5-osx-x64-v5.1',
+        cudnn_ver='v5.1',
+        sha256sum='bfea8f20351fc5d6ecd26b55e5c06850726f68b3df2f9c74d9f4ec77cb467f89',
+    )
+
+    codes['v51-cuda8'] = cudnn_base.format(
+        cudnn='cudnn-8.0-osx-x64-v5.1',
+        cudnn_ver='v5.1',
+        sha256sum='2528f09bfbfafc7397682308d0809f22609b57eea9faec51f320ce8aab2ebec6',
+    )
+
+    codes['v6'] = cudnn_base.format(
+        cudnn='cudnn-7.5-osx-x64-v6.0',
+        cudnn_ver='v6.0',
+        sha256sum='dde472e366b7492857db66a07e5f74bd36d8c3cdb702a031550f85b0a27ab98a',
+    )
+
+    codes['v6-cuda8'] = cudnn_base.format(
+        cudnn='cudnn-8.0-osx-x64-v6.0',
+        cudnn_ver='v6.0',
+        sha256sum='406fb06935db83ab9d94cdaf134233ad2db87fba6db652607f6c10aed8404e6d',
+    )
+
+    LIBDIR = 'lib'
+
+else:
+    print('Unsupported platform: "%s"' % sys.platform)
+    sys.exit(1)
 
 
 local_install_command = 'tar -xzf {file} -C {path}'
@@ -174,9 +258,9 @@ def select_cudnn(ver):
     print('Successfully installed %s' % ver)
     print('Set your environment variables:')
     print('')
-    print('  LD_LIBRARY_PATH=~/.cudnn/active/cuda/lib64:$LD_LIBRARY_PATH')
+    print('  LD_LIBRARY_PATH=~/.cudnn/active/cuda/%s:$LD_LIBRARY_PATH' % LIBDIR)
     print('  CPATH=~/.cudnn/active/cuda/include:$CPATH')
-    print('  LIBRARY_PATH=~/.cudnn/active/cuda/lib64:$LIBRARY_PATH')
+    print('  LIBRARY_PATH=~/.cudnn/active/cuda/%s:$LIBRARY_PATH' % LIBDIR)
 
 
 def yes_no_query(question):
