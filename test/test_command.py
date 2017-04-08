@@ -46,6 +46,12 @@ class TestCommand(unittest.TestCase):
         self.stdout = StringIO()
         sys.stdout = self.stdout
 
+    def test_no_subcommand(self):
+        with self.assertRaises(SystemExit) as cont:
+            self.call_main()
+
+        self.assertEqual(cont.exception.code, 2)
+
     def test_install_unknown(self):
         with self.assertRaises(SystemExit) as cont:
             self.call_main('install', 'unknown')

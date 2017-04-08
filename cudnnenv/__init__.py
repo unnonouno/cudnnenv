@@ -392,4 +392,7 @@ def main(args=None):
 
     args = parser.parse_args(args=args)
 
+    if not hasattr(args, 'func'):
+        parser.error('too few arguments')
+
     args.func(args)
