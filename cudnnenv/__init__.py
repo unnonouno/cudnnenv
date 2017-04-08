@@ -394,6 +394,5 @@ def main(args=None):
 
     if not hasattr(args, 'func'):
         parser.error('too few arguments')
-        sys.exit(2)
 
     args.func(args)
