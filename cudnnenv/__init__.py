@@ -90,13 +90,13 @@ rm {cudnn}.tgz
     codes['v6'] = cudnn_base.format(
         cudnn='cudnn-7.5-linux-x64-v6.0',
         cudnn_ver='v6.0',
-        sha256sum='f01ef9edde632cf75ae38045df30d7e8ec6847f3bdd20dcf13eaa52def253fba',
+        sha256sum='568d4b070c5f91ab8a15b287b73dd072b99c7267a43edad13f70337cd186c82c',
     )
 
     codes['v6-cuda8'] = cudnn_base.format(
         cudnn='cudnn-8.0-linux-x64-v6.0',
         cudnn_ver='v6.0',
-        sha256sum='36e7cd54d9f4cd448c302a40d2ed530a643e3ae32797a67739448ebe7c9f0620',
+        sha256sum='9b09110af48c9a4d7b6344eb4b3e344daa84987ed6177d5c44319732f3bb7f9c',
     )
 
     LIBDIR = 'lib64'
@@ -167,13 +167,13 @@ rm {cudnn}.tgz
     codes['v6'] = cudnn_base.format(
         cudnn='cudnn-7.5-osx-x64-v6.0',
         cudnn_ver='v6.0',
-        sha256sum='dde472e366b7492857db66a07e5f74bd36d8c3cdb702a031550f85b0a27ab98a',
+        sha256sum='368fd7e197d735e84446d97da3e27c1c22934dfc960cca92a22160200a2f6d17',
     )
 
     codes['v6-cuda8'] = cudnn_base.format(
         cudnn='cudnn-8.0-osx-x64-v6.0',
         cudnn_ver='v6.0',
-        sha256sum='406fb06935db83ab9d94cdaf134233ad2db87fba6db652607f6c10aed8404e6d',
+        sha256sum='1f2842872ddae3ca61d5f5a89fe5f519f18ca538c28cc04c0c4bb3b5f3317dac'
     )
 
     LIBDIR = 'lib'
