@@ -1,3 +1,11 @@
+Release 0.5.0 - 2017/4/30
+-------------------------
+
+- macOS is supported (#37)
+- cuDNN v6 is updated (#39)
+- Show help when no subcommand is given (#38)
+
+
 Release 0.4.0 - 2017/3/28
 -------------------------
 
