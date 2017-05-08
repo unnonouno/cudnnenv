@@ -384,7 +384,7 @@ def main(args=None):
     sub = subparsers.add_parser('version', help='Show active version')
     sub.set_defaults(func=version)
 
-    sub = subparsers.add_parser('versions', help='Show avalable versions')
+    sub = subparsers.add_parser('versions', help='Show available versions')
     sub.set_defaults(func=versions)
 
     sub = subparsers.add_parser('deactivate', help='Deactivate cudnnenv')
