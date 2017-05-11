@@ -12,12 +12,9 @@ matrix:
       python: "3.6"
     - os: osx
       language: generic
-      before_install:
-        - brew update
-        - brew install python3
 
 install:
-  - pip install coverage coveralls
+  - pip install -U coverage coveralls setuptools
   - pip install .
 
 script:
