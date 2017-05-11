@@ -200,7 +200,7 @@ def safe_dir(path):
     os.makedirs(path)
     try:
         yield path
-    except Exception:
+    except BaseException:
         shutil.rmtree(path, ignore_errors=True)
         raise
 

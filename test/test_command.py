@@ -12,6 +12,8 @@ import sys
 import tempfile
 import unittest
 
+import mock
+
 import cudnnenv
 
 
@@ -57,6 +59,20 @@ class TestCommand(unittest.TestCase):
             self.call_main('install', 'unknown')
 
         self.assertEqual(cont.exception.code, 2)
+
+    def test_install_interrupt(self):
+        def interrupt(cmd, **kwargs):
+            raise KeyboardInterrupt
+
+        try:
+            with mock.patch('subprocess.check_call', new=interrupt):
+                self.call_main('install', 'v2')
+        except BaseException:
+            pass
+
+        # Check if no directory is created
+        self.assertFalse(os.path.exists(
+            os.path.join(self.path, 'versions', 'v2')))
 
     def test_install_file_and_uninstall(self):
         self.call_main('install-file', self.empty_tgz_path, 'v0')
