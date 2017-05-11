@@ -17,7 +17,7 @@ matrix:
         - brew install python3
 
 install:
-  - pip install coverage coveralls
+  - pip install -U coverage coveralls setuptools
   - pip install .
 
 script:
