@@ -348,7 +348,9 @@ def deactivate(args):
 
 
 def main(args=None):
-    parser = argparse.ArgumentParser(version='cudnnenv %s' % __version__)
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        '--version', action='version', version='cudnnenv %s' % __version__)
     subparsers = parser.add_subparsers(help='Subcommand')
 
     sub = subparsers.add_parser('install', help='Install version')
