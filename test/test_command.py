@@ -49,7 +49,8 @@ class TestCommand(unittest.TestCase):
         sys.stdout = self.stdout
 
     def test_version(self):
-        self.call_main('--version')
+        with self.assertRaises(SystemExit) as cont:
+            self.call_main('--version')
 
     def test_no_subcommand(self):
         with self.assertRaises(SystemExit) as cont:
