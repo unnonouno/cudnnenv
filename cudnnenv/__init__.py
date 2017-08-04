@@ -99,6 +99,18 @@ rm {cudnn}.tgz
         sha256sum='9b09110af48c9a4d7b6344eb4b3e344daa84987ed6177d5c44319732f3bb7f9c',
     )
 
+    codes['v7-cuda8'] = cudnn_base.format(
+        cudnn='cudnn-8.0-linux-x64-v7',
+        cudnn_ver='v7.0.1',
+        sha256sum='288d844ab289b56d0c7b6719a34c7c0b57a01c58ffbe4d582c9b539da96ed2a7',
+    )
+
+    codes['v7-cuda9'] = cudnn_base.format(
+        cudnn='cudnn-9.0-linux-x64-v7',
+        cudnn_ver='v7.0.1',
+        sha256sum='32d0caf6250ea8d2c3c80649ea6a032e46741d78bdca40c37b8ac67b00fe3244',
+    )
+
     LIBDIR = 'lib64'
 
 elif sys.platform == 'darwin':
@@ -174,6 +186,12 @@ rm {cudnn}.tgz
         cudnn='cudnn-8.0-osx-x64-v6.0',
         cudnn_ver='v6.0',
         sha256sum='1f2842872ddae3ca61d5f5a89fe5f519f18ca538c28cc04c0c4bb3b5f3317dac'
+    )
+
+    codes['v7-cuda9'] = cudnn_base.format(
+        cudnn='cudnn-9.0-osx-x64-v7',
+        cudnn_ver='v7.0.1',
+        sha256sum='b2c259fc6b47abd820397e37194b49ff538f03c07d0121a66475986e61d11c5d',
     )
 
     LIBDIR = 'lib'
