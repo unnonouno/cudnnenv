@@ -99,7 +99,7 @@ rm {cudnn}.tgz
         sha256sum='9b09110af48c9a4d7b6344eb4b3e344daa84987ed6177d5c44319732f3bb7f9c',
     )
 
-    codes['v7'] = cudnn_base.format(
+    codes['v7-cuda8'] = cudnn_base.format(
         cudnn='cudnn-8.0-linux-x64-v7',
         cudnn_ver='v7.0.1',
         sha256sum='288d844ab289b56d0c7b6719a34c7c0b57a01c58ffbe4d582c9b539da96ed2a7',
