@@ -1,3 +1,11 @@
+Rlease 0.6.0 - 2017/8/4
+-----------------------
+
+- cuDNN v7 is supported (#50)
+- sha256sum format problem is solved (#48 thank you @rooa, #53)
+- Improved code format (#51, #52)
+
+  
 Release 0.5.0 - 2017/4/30
 -------------------------
 
