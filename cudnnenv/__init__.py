@@ -46,7 +46,7 @@ mv {cudnn}/libcudnn_static.a {{path}}/cuda/lib64/.
 
     cudnn_base = '''
 curl -o {cudnn}.tgz http://developer.download.nvidia.com/compute/redist/cudnn/{cudnn_ver}/{cudnn}.tgz &&
-echo "{sha256sum} {cudnn}.tgz" | sha256sum -cw --quiet - &&
+echo "{sha256sum}  {cudnn}.tgz" | sha256sum -cw --quiet - &&
 tar -xzf {cudnn}.tgz -C {{path}} &&
 rm {cudnn}.tgz
 '''
