@@ -16,7 +16,7 @@ __version__ = '0.5.0'
 if int(platform.python_version_tuple()[0]) >= 3:
     _raw_input = input
 else:
-    _raw_input = raw_input
+    _raw_input = raw_input  # NOQA
 
 
 cudnn_home = os.path.join(os.environ['HOME'], '.cudnn')

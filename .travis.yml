@@ -19,6 +19,7 @@ install:
 
 script:
   - coverage run --source=cudnnenv setup.py test
+  - pip install flake8 && flake8
 
 after_success:
   - coveralls
