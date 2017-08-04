@@ -17,6 +17,33 @@ import mock
 import cudnnenv
 
 
+if 'linux' in sys.platform:
+    _available_versions = '''  v2
+  v3
+  v4
+  v5
+  v5-cuda8
+  v51
+  v51-cuda8
+  v6
+  v6-cuda8
+  v7-cuda8
+  v7-cuda9
+'''
+elif sys.platform == 'darwin':
+    _available_versions = '''  v2
+  v3
+  v4
+  v5
+  v5-cuda8
+  v51
+  v51-cuda8
+  v6
+  v6-cuda8
+  v7-cuda9
+'''
+
+
 class TestCommand(unittest.TestCase):
 
     empty_tgz_path = os.path.join(
@@ -94,19 +121,10 @@ class TestCommand(unittest.TestCase):
         self.clear_stdout()
         self.call_main('versions')
         self.assertEqual(self.get_stdout(), '''Available versions:
-  v2
-  v3
-  v4
-  v5
-  v5-cuda8
-  v51
-  v51-cuda8
-  v6
-  v6-cuda8
-
+{}
 Installed versions:
 * v0
-''')
+'''.format(_available_versions))
 
         self.set_stdin('y\n')
         self.call_main('uninstall', 'v0')
@@ -116,18 +134,9 @@ Installed versions:
         self.clear_stdout()
         self.call_main('versions')
         self.assertEqual(self.get_stdout(), '''Available versions:
-  v2
-  v3
-  v4
-  v5
-  v5-cuda8
-  v51
-  v51-cuda8
-  v6
-  v6-cuda8
-
+{}
 Installed versions:
-''')
+'''.format(_available_versions))
 
     def test_install_exists(self):
         self.call_main('install-file', self.empty_tgz_path, 'v0')
@@ -154,36 +163,18 @@ Installed versions:
         self.clear_stdout()
         self.call_main('versions')
         self.assertEqual(self.get_stdout(), '''Available versions:
-  v2
-  v3
-  v4
-  v5
-  v5-cuda8
-  v51
-  v51-cuda8
-  v6
-  v6-cuda8
-
+{}
 Installed versions:
   v0
   v1
-''')
+'''.format(_available_versions))
 
     def test_clean_environment(self):
         self.call_main('versions')
         self.assertEqual(self.get_stdout(), '''Available versions:
-  v2
-  v3
-  v4
-  v5
-  v5-cuda8
-  v51
-  v51-cuda8
-  v6
-  v6-cuda8
-
+{}
 Installed versions:
-''')
+'''.format(_available_versions))
 
         self.clear_stdout()
         self.call_main('version')
