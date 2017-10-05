@@ -99,17 +99,44 @@ rm {cudnn}.tgz
         sha256sum='9b09110af48c9a4d7b6344eb4b3e344daa84987ed6177d5c44319732f3bb7f9c',
     )
 
-    codes['v7-cuda8'] = cudnn_base.format(
+    codes['v7.0.1-cuda8'] = cudnn_base.format(
         cudnn='cudnn-8.0-linux-x64-v7',
         cudnn_ver='v7.0.1',
         sha256sum='288d844ab289b56d0c7b6719a34c7c0b57a01c58ffbe4d582c9b539da96ed2a7',
     )
 
-    codes['v7-cuda9'] = cudnn_base.format(
+    codes['v7.0.1-cuda9'] = cudnn_base.format(
         cudnn='cudnn-9.0-linux-x64-v7',
         cudnn_ver='v7.0.1',
         sha256sum='32d0caf6250ea8d2c3c80649ea6a032e46741d78bdca40c37b8ac67b00fe3244',
     )
+
+    codes['v7.0.2-cuda8'] = cudnn_base.format(
+        cudnn='cudnn-8.0-linux-x64-v7',
+        cudnn_ver='v7.0.2',
+        sha256sum='b667807f2b82af7a9ed5451e9ff5ea7a11deeef85aafdc5529e1adfddcc069ca',
+    )
+
+    codes['v7.0.2-cuda9'] = cudnn_base.format(
+        cudnn='cudnn-9.0-linux-x64-v7',
+        cudnn_ver='v7.0.2',
+        sha256sum='ec2a89453ef6454d417b7f3dad67405e30953e1df1e47aafb846f99d02eaa5d1',
+    )
+
+    codes['v7.0.3-cuda8'] = cudnn_base.format(
+        cudnn='cudnn-8.0-linux-x64-v7',
+        cudnn_ver='v7.0.3',
+        sha256sum='e44dd20750ea1fa287ed0576c71d7ba30383aabdaacd18df173947cf7a53fc3f',
+    )
+
+    codes['v7.0.3-cuda9'] = cudnn_base.format(
+        cudnn='cudnn-9.0-linux-x64-v7',
+        cudnn_ver='v7.0.3',
+        sha256sum='09583e93110cee2bf76ea355e1d9c7c366a50ad858362064f7c927cc46209ef9',
+    )
+
+    codes['v7-cuda8'] = codes['v7.0.3-cuda8']
+    codes['v7-cuda9'] = codes['v7.0.3-cuda9']
 
     LIBDIR = 'lib64'
 
@@ -188,11 +215,25 @@ rm {cudnn}.tgz
         sha256sum='1f2842872ddae3ca61d5f5a89fe5f519f18ca538c28cc04c0c4bb3b5f3317dac'
     )
 
-    codes['v7-cuda9'] = cudnn_base.format(
+    codes['v7.0.1-cuda9'] = cudnn_base.format(
         cudnn='cudnn-9.0-osx-x64-v7',
         cudnn_ver='v7.0.1',
         sha256sum='b2c259fc6b47abd820397e37194b49ff538f03c07d0121a66475986e61d11c5d',
     )
+
+    codes['v7.0.2-cuda9'] = cudnn_base.format(
+        cudnn='cudnn-9.0-osx-x64-v7',
+        cudnn_ver='v7.0.2',
+        sha256sum='3c9dd6d17aad84678934c735f4a1a5a901a2c4c79cc45b3e2cb5599834fb1a2b',
+    )
+
+    codes['v7.0.3-cuda9'] = cudnn_base.format(
+        cudnn='cudnn-9.0-osx-x64-v7',
+        cudnn_ver='v7.0.3',
+        sha256sum='ea7e085af13de736e2727a21d2cd0162084afc12b17fdb08b124d0e5280bab11',
+    )
+
+    codes['v7-cuda9'] = codes['v7.0.3-cuda9']
 
     LIBDIR = 'lib'
 
