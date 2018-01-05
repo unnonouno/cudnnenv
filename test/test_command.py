@@ -52,7 +52,6 @@ elif sys.platform == 'darwin':
   v7.0.1-cuda9
   v7.0.2-cuda9
   v7.0.3-cuda9
-  v7.0.4-cuda9
 '''
 
 
