@@ -82,9 +82,9 @@ Use `activate` subcommand to only activate installed version.
 
 positional arguments:
 
-:`VERSION`: Version of cuDNN you want to install and activate. Select from [v2, v3, v4, v5, v5-cuda8, v51, v51-cuda8, v6, v6-cuda8, v7-cuda8, v7-cuda9, v7.0.1-cuda8, v7.0.1-cuda9, v7.0.2-cuda8, v7.0.2-cuda9, v7.0.3-cuda8, v7.0.3-cuda9]
+:`VERSION`: Version of cuDNN you want to install and activate. Select from [v2, v3, v4, v5, v5-cuda8, v51, v51-cuda8, v6, v6-cuda8, v7-cuda8, v7-cuda9, v7.0.1-cuda8, v7.0.1-cuda9, v7.0.2-cuda8, v7.0.2-cuda9, v7.0.3-cuda8, v7.0.3-cuda9, v7.0.4-cuda8, v7.0.4-cuda9]
 
-Note that `v7-cuda8` is not available on macOS.
+Note that `v7*-cuda8` and `v7.0.4-cuda9` are not available on macOS.
 
 `install-file`
 ~~~~~~~~~~~~~~
