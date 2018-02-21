@@ -264,13 +264,7 @@ rm {cudnn}.tgz
         sha256sum='ea7e085af13de736e2727a21d2cd0162084afc12b17fdb08b124d0e5280bab11',
     )
 
-    codes['v7.0.4-cuda9'] = cudnn_base.format(
-        cudnn='cudnn-9.0-osx-x64-v7',
-        cudnn_ver='v7.0.4',
-        sha256sum='b408b7747b74771c6bc382f505961b034b3af4fbaa243e14d5bc6ca8c3c49699',
-    )
-
-    codes['v7-cuda9'] = codes['v7.0.4-cuda9']
+    codes['v7-cuda9'] = codes['v7.0.3-cuda9']
 
     LIBDIR = 'lib'
 
