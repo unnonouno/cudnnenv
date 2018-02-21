@@ -10,7 +10,7 @@ import subprocess
 import sys
 import tempfile
 
-__version__ = '0.6.1'
+__version__ = '0.6.2'
 
 
 if int(platform.python_version_tuple()[0]) >= 3:
