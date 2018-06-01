@@ -82,9 +82,9 @@ Use `activate` subcommand to only activate installed version.
 
 positional arguments:
 
-:`VERSION`: Version of cuDNN you want to install and activate. Select from [v2, v3, v4, v5, v5-cuda8, v51, v51-cuda8, v6, v6-cuda8, v7-cuda8, v7-cuda9, v7.0.1-cuda8, v7.0.1-cuda9, v7.0.2-cuda8, v7.0.2-cuda9, v7.0.3-cuda8, v7.0.3-cuda9, v7.0.4-cuda8, v7.0.4-cuda9, v7.0.5-cuda8, v7.0.5-cuda9, v7.0.5-cuda91, v7.1.1-cuda8, v7.1.1-cuda9, v7.1.1-cuda91, v71-cuda8, v71-cuda9, v71-cuda91]
+:`VERSION`: Version of cuDNN you want to install and activate. Select from [v2, v3, v4, v5, v5-cuda8, v51, v51-cuda8, v6, v6-cuda8, v7-cuda8, v7-cuda9, v7.0.1-cuda8, v7.0.1-cuda9, v7.0.2-cuda8, v7.0.2-cuda9, v7.0.3-cuda8, v7.0.3-cuda9, v7.0.4-cuda8, v7.0.4-cuda9, v7.0.5-cuda8, v7.0.5-cuda9, v7.0.5-cuda91, v7.1.1-cuda8, v7.1.1-cuda9, v7.1.1-cuda91, v7.1.2-cuda8, v7.1.2-cuda9, v7.1.2-cuda91, v7.1.3-cuda8, v7.1.3-cuda9, v7.1.3-cuda91, v7.1.4-cuda9, v7.1.4-cuda92, v71-cuda8, v71-cuda9, v71-cuda91, v71-cuda92]
 
-Note that `v7*-cuda8` and `v7.0.4-cuda9` are not available on macOS.
+Note that `v7*-cuda8`, `v7.0.4-cuda9`, `v7.1.1-cuda*`, `v7.1.2-cuda*`, `v7.1.3-cuda*` and `v7.1.4-cuda9` are not available on macOS.
 
 `install-file`
 ~~~~~~~~~~~~~~
