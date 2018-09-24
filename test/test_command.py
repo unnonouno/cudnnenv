@@ -55,6 +55,8 @@ if 'linux' in sys.platform:
   v7.2.1-cuda8
   v7.2.1-cuda9
   v7.2.1-cuda92
+  v7.3.0-cuda10
+  v7.3.0-cuda9
   v71-cuda8
   v71-cuda9
   v71-cuda91
@@ -62,6 +64,8 @@ if 'linux' in sys.platform:
   v72-cuda8
   v72-cuda9
   v72-cuda92
+  v73-cuda10
+  v73-cuda9
 '''
 elif sys.platform == 'darwin':
     _available_versions = '''  v2
@@ -81,6 +85,7 @@ elif sys.platform == 'darwin':
   v7.2.1-cuda92
   v71-cuda92
   v72-cuda92
+  v73-cuda10
 '''
 
 
