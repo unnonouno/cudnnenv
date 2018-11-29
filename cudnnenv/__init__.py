@@ -265,7 +265,7 @@ rm {cudnn}.tgz
         sha256sum='7526a33bc3c152ca5d8f3eddedaa4a0b3c721a3c0000eeb80ebfe5cbc54696b7',
     )
 
-    codes['v7.4.1-cuda90'] = cudnn_base.format(
+    codes['v7.4.1-cuda9'] = cudnn_base.format(
         cudnn='cudnn-9.0-linux-x64-v7.4.1.5',
         cudnn_ver='v7.4.1',
         sha256sum='bec38fc281fec0226766cce050473043765345cb8a5ed699da4d663ecfa4f24d',
