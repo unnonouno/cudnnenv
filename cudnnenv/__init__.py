@@ -283,6 +283,24 @@ rm {cudnn}.tgz
         sha256sum='b320606f1840eec0cdd4453cb333554a3fe496dd4785f10d8e87fe1a4f52bd5c',
     )
 
+    codes['v7.4.2-cuda9'] = cudnn_base.format(
+        cudnn='cudnn-9.0-linux-x64-v7.4.2.24',
+        cudnn_ver='v7.4.2',
+        sha256sum='e3e72e9e2bf4c5e4cdd467aa6b824effc4566d230a2cda4153ad894d7d15cf73',
+    )
+
+    codes['v7.4.2-cuda92'] = cudnn_base.format(
+        cudnn='cudnn-9.2-linux-x64-v7.4.2.24',
+        cudnn_ver='v7.4.2',
+        sha256sum='19565be5dba39097d59f99227fd65cd2f3a3be9e4249500f772d4b14c7806371',
+    )
+
+    codes['v7.4.2-cuda10'] = cudnn_base.format(
+        cudnn='cudnn-10.0-linux-x64-v7.4.2.24',
+        cudnn_ver='v7.4.2',
+        sha256sum='2edfc86a02b50d17e88c478955a332e6a1e8174e7e53a3458b4ea51faf02daa3',
+    )
+
     codes['v71-cuda8'] = codes['v7.1.3-cuda8']
     codes['v71-cuda9'] = codes['v7.1.4-cuda9']
     codes['v71-cuda91'] = codes['v7.1.3-cuda91']
@@ -292,9 +310,9 @@ rm {cudnn}.tgz
     codes['v72-cuda92'] = codes['v7.2.1-cuda92']
     codes['v73-cuda9'] = codes['v7.3.0-cuda9']
     codes['v73-cuda10'] = codes['v7.3.0-cuda10']
-    codes['v74-cuda9'] = codes['v7.4.1-cuda9']
-    codes['v74-cuda92'] = codes['v7.4.1-cuda92']
-    codes['v74-cuda10'] = codes['v7.4.1-cuda10']
+    codes['v74-cuda9'] = codes['v7.4.2-cuda9']
+    codes['v74-cuda92'] = codes['v7.4.2-cuda92']
+    codes['v74-cuda10'] = codes['v7.4.2-cuda10']
 
     LIBDIR = 'lib64'
 
@@ -415,11 +433,17 @@ rm {cudnn}.tgz
         sha256sum='82cdd28ea38724e0be4cac8dd67cec5ec2936a662a992a8740682e837972ec2d',
     )
 
+    codes['v7.4.2-cuda10'] = cudnn_base.format(
+        cudnn='cudnn-10.0-osx-x64-v7.4.2.24',
+        cudnn_ver='v7.4.2',
+        sha256sum='4b1c53af7e50ff046ed53d4ba9129900da9bef0008b93cefad2e4195f1ee8ebb',
+    )
+
     codes['v7-cuda9'] = codes['v7.0.3-cuda9']
     codes['v71-cuda92'] = codes['v7.1.4-cuda92']
     codes['v72-cuda92'] = codes['v7.2.1-cuda92']
     codes['v73-cuda10'] = codes['v7.3.0-cuda10']
-    codes['v74-cuda10'] = codes['v7.4.1-cuda10']
+    codes['v74-cuda10'] = codes['v7.4.2-cuda10']
 
     LIBDIR = 'lib'
 
