@@ -63,6 +63,10 @@ if 'linux' in sys.platform:
   v7.4.2-cuda10
   v7.4.2-cuda9
   v7.4.2-cuda92
+  v7.5.0-cuda10
+  v7.5.0-cuda101
+  v7.5.0-cuda9
+  v7.5.0-cuda92
   v71-cuda8
   v71-cuda9
   v71-cuda91
@@ -75,6 +79,10 @@ if 'linux' in sys.platform:
   v74-cuda10
   v74-cuda9
   v74-cuda92
+  v75-cuda10
+  v75-cuda101
+  v75-cuda9
+  v75-cuda92
 '''
 elif sys.platform == 'darwin':
     _available_versions = '''  v2
@@ -95,10 +103,14 @@ elif sys.platform == 'darwin':
   v7.3.0-cuda10
   v7.4.1-cuda10
   v7.4.2-cuda10
+  v7.5.0-cuda10
+  v7.5.0-cuda101
   v71-cuda92
   v72-cuda92
   v73-cuda10
   v74-cuda10
+  v75-cuda10
+  v75-cuda101
 '''
 
 
