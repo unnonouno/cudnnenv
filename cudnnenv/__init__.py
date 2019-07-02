@@ -349,6 +349,30 @@ rm {cudnn}.tgz
         sha256sum='2c833f43c9147d9a25a20947a4c5a5f5c33b2443240fd767f63b330c482e68e0',
     )
 
+    codes['v7.6.0-cuda9'] = cudnn_base.format(
+        cudnn='cudnn-9.0-linux-x64-v7.6.0.64',
+        cudnn_ver='v7.6.0',
+        sha256sum='90659ea77734b7b671afe930c9898d21a13b888998f1dd3940cc57d6b2f29b86',
+    )
+
+    codes['v7.6.0-cuda92'] = cudnn_base.format(
+        cudnn='cudnn-9.2-linux-x64-v7.6.0.64',
+        cudnn_ver='v7.6.0',
+        sha256sum='ff028e6f07349445c16fef704a90bccb0992c3e012bba66ab1da352bad55b304',
+    )
+
+    codes['v7.6.0-cuda10'] = cudnn_base.format(
+        cudnn='cudnn-10.0-linux-x64-v7.6.0.64',
+        cudnn_ver='v7.6.0',
+        sha256sum='c4e1ee4168f4cadabaa989487a47bed09f34d34e35398b6084a2699d11bd2560',
+    )
+
+    codes['v7.6.0-cuda101'] = cudnn_base.format(
+        cudnn='cudnn-10.1-linux-x64-v7.6.0.64',
+        cudnn_ver='v7.6.0',
+        sha256sum='e956c6f9222fcb867a10449cfc76dee5cfd7c7531021d95fe9586d7e043b57d7',
+    )
+
     codes['v71-cuda8'] = codes['v7.1.3-cuda8']
     codes['v71-cuda9'] = codes['v7.1.4-cuda9']
     codes['v71-cuda91'] = codes['v7.1.3-cuda91']
@@ -365,6 +389,10 @@ rm {cudnn}.tgz
     codes['v75-cuda92'] = codes['v7.5.1-cuda92']
     codes['v75-cuda10'] = codes['v7.5.1-cuda10']
     codes['v75-cuda101'] = codes['v7.5.1-cuda101']
+    codes['v76-cuda9'] = codes['v7.6.0-cuda9']
+    codes['v76-cuda92'] = codes['v7.6.0-cuda92']
+    codes['v76-cuda10'] = codes['v7.6.0-cuda10']
+    codes['v76-cuda101'] = codes['v7.6.0-cuda101']
 
     LIBDIR = 'lib64'
 
@@ -515,6 +543,18 @@ rm {cudnn}.tgz
         sha256sum='2035071b11ffd7da8473f47a63ffd6610cb73108e072ff44b708ec833c218b45',
     )
 
+    codes['v7.6.0-cuda10'] = cudnn_base.format(
+        cudnn='cudnn-10.0-osx-x64-v7.6.0.64',
+        cudnn_ver='v7.6.0',
+        sha256sum='30ea0ef517d1f8a2be29a13bdefa9abd71d952d0cddfb8b2c3fba36a48c46f0f',
+    )
+
+    codes['v7.6.0-cuda101'] = cudnn_base.format(
+        cudnn='cudnn-10.1-osx-x64-v7.6.0.64',
+        cudnn_ver='v7.6.0',
+        sha256sum='8d1417e8f528cfda4e859cf41ecb843bad0a8920935ce0dadde5f7327d8427fb',
+    )
+
     codes['v7-cuda9'] = codes['v7.0.3-cuda9']
     codes['v71-cuda92'] = codes['v7.1.4-cuda92']
     codes['v72-cuda92'] = codes['v7.2.1-cuda92']
@@ -522,6 +562,8 @@ rm {cudnn}.tgz
     codes['v74-cuda10'] = codes['v7.4.2-cuda10']
     codes['v75-cuda10'] = codes['v7.5.1-cuda10']
     codes['v75-cuda101'] = codes['v7.5.1-cuda101']
+    codes['v76-cuda10'] = codes['v7.6.0-cuda10']
+    codes['v76-cuda101'] = codes['v7.6.0-cuda101']
 
     LIBDIR = 'lib'
 
