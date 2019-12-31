@@ -87,6 +87,11 @@ if 'linux' in sys.platform:
   v7.6.3-cuda101
   v7.6.3-cuda9
   v7.6.3-cuda92
+  v7.6.5-cuda10
+  v7.6.5-cuda101
+  v7.6.5-cuda102
+  v7.6.5-cuda9
+  v7.6.5-cuda92
   v71-cuda8
   v71-cuda9
   v71-cuda91
@@ -105,6 +110,7 @@ if 'linux' in sys.platform:
   v75-cuda92
   v76-cuda10
   v76-cuda101
+  v76-cuda102
   v76-cuda9
   v76-cuda92
 '''
@@ -139,6 +145,8 @@ elif sys.platform == 'darwin':
   v7.6.2-cuda101
   v7.6.3-cuda10
   v7.6.3-cuda101
+  v7.6.5-cuda10
+  v7.6.5-cuda101
   v71-cuda92
   v72-cuda92
   v73-cuda10
