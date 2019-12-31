@@ -445,6 +445,30 @@ rm {cudnn}.tgz
         sha256sum='352557346d8111e2f954c494be1a90207103d316b8777c33e62b3a7f7b708961',
     )
 
+    codes['v7.6.4-cuda9'] = cudnn_base.format(
+        cudnn='cudnn-9.0-linux-x64-v7.6.4.38',
+        cudnn_ver='v7.6.4',
+        sha256sum='8db78c3623c192d4f03f3087b41c32cb0baac95e13408b5d9dabe626cb4aab5d',
+    )
+
+    codes['v7.6.4-cuda92'] = cudnn_base.format(
+        cudnn='cudnn-9.2-linux-x64-v7.6.4.38',
+        cudnn_ver='v7.6.4',
+        sha256sum='c79156531e641289b6a6952888b9637059ef30defd43c3cf82acf38d67f60a27',
+    )
+
+    codes['v7.6.4-cuda10'] = cudnn_base.format(
+        cudnn='cudnn-10.0-linux-x64-v7.6.4.38',
+        cudnn_ver='v7.6.4',
+        sha256sum='417bb5daf51377037eb2f5c87649000ca1b9cec0acb16cfe07cb1d3e9a961dbf',
+    )
+
+    codes['v7.6.4-cuda101'] = cudnn_base.format(
+        cudnn='cudnn-10.1-linux-x64-v7.6.4.38',
+        cudnn_ver='v7.6.4',
+        sha256sum='32091d115c0373027418620a09ebec3658a6bc467d011de7cdd0eb07d644b099',
+    )
+
     codes['v7.6.5-cuda9'] = cudnn_base.format(
         cudnn='cudnn-9.0-linux-x64-v7.6.5.32',
         cudnn_ver='v7.6.5',
@@ -692,6 +716,18 @@ rm {cudnn}.tgz
         cudnn='cudnn-10.1-osx-x64-v7.6.3.30',
         cudnn_ver='v7.6.3',
         sha256sum='081703baa7c117d93ab0c753e4029c5b3c6f9517cde2ce4f8bebd324a67900f0',
+    )
+
+    codes['v7.6.4-cuda10'] = cudnn_base.format(
+        cudnn='cudnn-10.0-osx-x64-v7.6.4.38',
+        cudnn_ver='v7.6.4',
+        sha256sum='af01ab841caec25087776a6b8fc7782883da12e590e24825ad1031f9ae0ed4b1',
+    )
+
+    codes['v7.6.4-cuda101'] = cudnn_base.format(
+        cudnn='cudnn-10.1-osx-x64-v7.6.4.38',
+        cudnn_ver='v7.6.4',
+        sha256sum='bfced062c3689ced2c1fb49c7d5052e6bc3da6974c1eb707e4dcf8cd209d4236',
     )
 
     codes['v7.6.5-cuda10'] = cudnn_base.format(
