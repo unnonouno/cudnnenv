@@ -21,7 +21,7 @@ Requirement
 -----------
 
 - Linux, macOS
-- Python 2.7, 3.4, 3.5, 3.6
+- Python 2.7, 3.4, 3.5, 3.6, 3.7, 3.8
 
 
 Install
