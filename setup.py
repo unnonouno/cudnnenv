@@ -26,6 +26,6 @@ setup(
         'Intended Audience :: Information Technology',
         'Topic :: Utilities',
     ],
-    tests_require=['mock'],
+    tests_require=['mock<=2.0.0'],
     test_suite='test',
 )
