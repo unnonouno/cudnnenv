@@ -19,7 +19,6 @@ matrix:
 
 before_install:
   - shopt -s expand_aliases
-  - if [[ $TRAVIS_OS_NAME = "osx" ]]; then alias pip=pip2; fi
 
 install:
   - pip install coverage coveralls
