@@ -1,3 +1,10 @@
+Release 0.7.0 - 2020/02/26
+--------------------------
+
+- Python 3.7 and 3.8 are supported (#85)
+- cuDNN v7.5.1, 7.6.0, 7.6.1, 7.6.2 ,7.6.3, 7.6.4 and 7.6.5 are supported (#80, #81, #82, #83, #84 thank you @gwtnb and @bonprosoft)
+
+
 Release 0.6.6 - 2019/03/03
 --------------------------
 
