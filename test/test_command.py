@@ -117,6 +117,28 @@ if 'linux' in sys.platform:
   v76-cuda102
   v76-cuda9
   v76-cuda92
+  v8-cuda101
+  v8-cuda102
+  v8-cuda11
+  v8-cuda111
+  v8.0.2-cuda101
+  v8.0.2-cuda102
+  v8.0.2-cuda11
+  v8.0.3-cuda101
+  v8.0.3-cuda102
+  v8.0.3-cuda11
+  v8.0.4-cuda101
+  v8.0.4-cuda102
+  v8.0.4-cuda11
+  v8.0.4-cuda111
+  v8.0.5-cuda101
+  v8.0.5-cuda102
+  v8.0.5-cuda11
+  v8.0.5-cuda111
+  v8.1.0-cuda102
+  v8.1.0-cuda112
+  v81-cuda102
+  v81-cuda112
 '''
 elif sys.platform == 'darwin':
     _available_versions = '''  v2
