@@ -137,8 +137,28 @@ if 'linux' in sys.platform:
   v8.0.5-cuda111
   v8.1.0-cuda102
   v8.1.0-cuda112
+  v8.1.1-cuda102
+  v8.1.1-cuda112
+  v8.2.0-cuda102
+  v8.2.0-cuda113
+  v8.2.1-cuda102
+  v8.2.1-cuda113
+  v8.2.2-cuda102
+  v8.2.2-cuda114
+  v8.2.4-cuda102
+  v8.2.4-cuda114
+  v8.3.0-cuda102
+  v8.3.0-cuda115
+  v8.3.1-cuda102
+  v8.3.1-cuda115
+  v8.3.2-cuda102
+  v8.3.2-cuda115
   v81-cuda102
   v81-cuda112
+  v82-cuda102
+  v82-cuda114
+  v83-cuda102
+  v83-cuda115
 '''
 elif sys.platform == 'darwin':
     _available_versions = '''  v2
