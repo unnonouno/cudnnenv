@@ -25,7 +25,7 @@ codes = {}
 
 if 'linux' in sys.platform:
     cudnn2_base = '''
-curl -s -o {cudnn}.tgz http://developer.download.nvidia.com/compute/redist/cudnn/{cudnn_ver}/{cudnn}.tgz &&
+curl -s -o {cudnn}.tgz https://developer.download.nvidia.com/compute/redist/cudnn/{cudnn_ver}/{cudnn}.tgz &&
 echo "{sha256sum}  {cudnn}.tgz" | sha256sum -cw --quiet - &&
 tar -xzf {cudnn}.tgz &&
 rm {cudnn}.tgz &&
@@ -45,7 +45,7 @@ mv {cudnn}/libcudnn_static.a {{path}}/cuda/lib64/.
     )
 
     cudnn_base = '''
-curl -o {cudnn}.tgz http://developer.download.nvidia.com/compute/redist/cudnn/{cudnn_ver}/{cudnn}.tgz &&
+curl -o {cudnn}.tgz https://developer.download.nvidia.com/compute/redist/cudnn/{cudnn_ver}/{cudnn}.tgz &&
 echo "{sha256sum}  {cudnn}.tgz" | sha256sum -cw --quiet - &&
 tar -xzf {cudnn}.tgz -C {{path}} &&
 rm {cudnn}.tgz
@@ -627,7 +627,7 @@ rm {cudnn}.tgz
 
 elif sys.platform == 'darwin':
     cudnn2_base = '''
-curl -s -o {cudnn}.tgz http://developer.download.nvidia.com/compute/redist/cudnn/{cudnn_ver}/{cudnn}.tgz &&
+curl -s -o {cudnn}.tgz https://developer.download.nvidia.com/compute/redist/cudnn/{cudnn_ver}/{cudnn}.tgz &&
 echo "{sha256sum}  {cudnn}.tgz" | shasum -a 256 -c - &&
 tar -xzf {cudnn}.tgz &&
 rm {cudnn}.tgz &&
@@ -646,7 +646,7 @@ mv {cudnn}/libcudnn_static.a {{path}}/cuda/lib/.
     )
 
     cudnn_base = '''
-curl -o {cudnn}.tgz http://developer.download.nvidia.com/compute/redist/cudnn/{cudnn_ver}/{cudnn}.tgz &&
+curl -o {cudnn}.tgz https://developer.download.nvidia.com/compute/redist/cudnn/{cudnn_ver}/{cudnn}.tgz &&
 echo "{sha256sum}  {cudnn}.tgz" | shasum -a 256 -c - &&
 tar -xzf {cudnn}.tgz -C {{path}} &&
 rm {cudnn}.tgz
