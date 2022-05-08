@@ -702,6 +702,34 @@ rm {cudnn}.tar.xz
         sha256sum='5500953c08c5e5d1dddcfda234f9efbddcdbe43a53b26dc0a82c723fa170c457',
     )
 
+    codes['v8.3.3-cuda102'] = cudnn83x_base.format(
+        cudnn='cudnn-linux-x86_64-8.3.3.40_cuda10.2-archive',
+        cuda_ver='10.2',
+        cudnn_ver='v8.3.3',
+        sha256sum='d8554f2b32e6295d5fc8f3ac25e68f94058b018c801dab9c143e36812f8926ab',
+    )
+
+    codes['v8.3.3-cuda115'] = cudnn83x_base.format(
+        cudnn='cudnn-linux-x86_64-8.3.3.40_cuda11.5-archive',
+        cuda_ver='11.5',
+        cudnn_ver='v8.3.3',
+        sha256sum='eabe96c75cf03ea4f5379894d914f1f8ae14ceab121989e84b0836d927fb7731',
+    )
+
+    codes['v8.4.0-cuda102'] = cudnn83x_base.format(
+        cudnn='cudnn-linux-x86_64-8.4.0.27_cuda10.2-archive',
+        cuda_ver='10.2',
+        cudnn_ver='v8.4.0',
+        sha256sum='14c5e3ca4258271996d1fd959c42d17c582ce4d9aff451f84524469e784fd154',
+    )
+
+    codes['v8.4.0-cuda116'] = cudnn83x_base.format(
+        cudnn='cudnn-linux-x86_64-8.4.0.27_cuda11.6-archive',
+        cuda_ver='11.6',
+        cudnn_ver='v8.4.0',
+        sha256sum='d19bdafd9800c79d29e6f6fffa9f9e2c10d1132d6c2ff10b1593e057e74dd050',
+    )
+
     codes['v71-cuda8'] = codes['v7.1.3-cuda8']
     codes['v71-cuda9'] = codes['v7.1.4-cuda9']
     codes['v71-cuda91'] = codes['v7.1.3-cuda91']
@@ -731,8 +759,10 @@ rm {cudnn}.tar.xz
     codes['v81-cuda112'] = codes['v8.1.1-cuda112']
     codes['v82-cuda102'] = codes['v8.2.4-cuda102']
     codes['v82-cuda114'] = codes['v8.2.4-cuda114']
-    codes['v83-cuda102'] = codes['v8.3.2-cuda102']
-    codes['v83-cuda115'] = codes['v8.3.2-cuda115']
+    codes['v83-cuda102'] = codes['v8.3.3-cuda102']
+    codes['v83-cuda115'] = codes['v8.3.3-cuda115']
+    codes['v84-cuda102'] = codes['v8.4.0-cuda102']
+    codes['v84-cuda116'] = codes['v8.4.0-cuda116']
 
     LIBDIR = 'lib64'
 
