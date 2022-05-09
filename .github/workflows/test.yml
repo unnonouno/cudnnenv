@@ -26,7 +26,7 @@ jobs:
         flake8
     - name: Report coverage
       run: |
-          coveralls --service=github
+        coveralls --service=github
       with:
         github-token: ${{ secrets.github_token }}
         flag-name: run-${{ matrix.os }}-${{ matrix.python-version }}
