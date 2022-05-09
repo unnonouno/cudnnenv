@@ -23,3 +23,6 @@ jobs:
       run: |
         coverage run --source=cudnnenv setup.py test
         flake8
+    - name: Report coverage
+      run: |
+        coveralls
