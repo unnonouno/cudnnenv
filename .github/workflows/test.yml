@@ -27,10 +27,10 @@ jobs:
     - name: Report coverage
       run: |
         coveralls --service=github
-      with:
-        github-token: ${{ secrets.github_token }}
-        flag-name: run-${{ matrix.os }}-${{ matrix.python-version }}
-        parallel: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        COVERALLS_FLAG_NAME: ${{ matrix.os }}-${{ matrix.python-version }}
+        COVERALLS_PARALLEL: true
 
   finish:
     needs: test
