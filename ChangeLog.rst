@@ -1,3 +1,10 @@
+Release 0.8.0 - 2022/05/22
+--------------------------
+
+- Python 3.9 and 3.10 are supported, and 3.4, 3.5 and 3.6 are not supported (#91)
+- cuDNN v8.0.2, 8.0.3, 8.0.4, 8.0.5, 8.1.0, 8.1.1, 8.2.0, 8.2.1, 8.2.4, 8.3.0, 8.3.1, 8.3.2, 8.3.3 and 8.4.0 are supported (#87, #89, #90 thank you @dev0x13)
+- Use GitHub Actions for test instead of Travis (#91, #92)
+
 Release 0.7.0 - 2020/02/26
 --------------------------
 

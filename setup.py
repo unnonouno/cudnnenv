@@ -5,7 +5,7 @@ from setuptools import setup
 
 setup(
     name='cudnnenv',
-    version='0.7.0',
+    version='0.8.0',
     description='cudnn environment manager',
     long_description=open('README.rst').read(),
     author='Yuya Unno',
